@@ -2,17 +2,8 @@
 <html lang="en">
    <!-- head -->
    <head>
-    <base href="/public">
+      <base href="/public">
       @include('home.css')
-      <style>
-        label{
-            display: inline-block;
-            width: 200px;
-        }
-        input{
-            width: 100%;
-        }
-      </style>
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -25,76 +16,112 @@
       <header>
          @include('home.header')
       </header>
-      <div  class="our_room">
+      <div class="py-5 bg-light">
          <div class="container">
             <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Our Room</h2>
-                     <p>Lorem Ipsum available, but the majority have suffered </p>
+               <!-- Left Column: Room Info -->
+               <div class="col-lg-8">
+                  <img class="room-details-hero" src="/room/{{$room->image}}" alt="{{$room->room_title}}"/>
+                  
+                  <div class="bg-white p-4 p-md-5 rounded-lg shadow-sm">
+                     <h2 class="section-heading mb-4">{{$room->room_title}}</h2>
+                     <p class="text-muted mb-5 lead">{{$room->description}}</p>
+                     
+                     <div class="row">
+                        <div class="col-md-12">
+                           <h4 class="h5 mb-4 playfair">Premium Amenities</h4>
+                           <div class="feature-list">
+                              <div class="feature-item">
+                                 <i class="fa fa-wifi"></i> Free High-Speed Wi-Fi
+                              </div>
+                              <div class="feature-item">
+                                 <i class="fa fa-coffee"></i> Complimentary Breakfast
+                              </div>
+                              <div class="feature-item">
+                                 <i class="fa fa-tv"></i> Smart TV & Netflix
+                              </div>
+                              <div class="feature-item">
+                                 <i class="fa fa-snowflake-o"></i> Air Conditioning
+                              </div>
+                              <div class="feature-item">
+                                 <i class="fa fa-bath"></i> Luxury Bathtub
+                              </div>
+                              <div class="feature-item">
+                                 <i class="fa fa-shield"></i> In-room Safe
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="mt-4 pt-4 border-top">
+                        <div class="row text-center">
+                           <div class="col-4">
+                              <p class="text-muted small mb-1">Room Type</p>
+                              <h5 class="mb-0">{{$room->room_type}}</h5>
+                           </div>
+                           <div class="col-4">
+                              <p class="text-muted small mb-1">Price Per Night</p>
+                              <h5 class="mb-0 text-gold">${{$room->price}}</h5>
+                           </div>
+                           <div class="col-4">
+                              <p class="text-muted small mb-1">Wi-Fi</p>
+                              <h5 class="mb-0">{{$room->wifi}}</h5>
+                           </div>
+                        </div>
+                     </div>
                   </div>
                </div>
-            </div>
-            <div class="row">
-               <div class="col-md-8">
-                  <div id="serv_hover"  class="room">
-                     <div style="padding: 20px;" class="room_img">
-                       <img style="hight:auto; width:500px" src="/room/{{$room->image}}" alt="#"/>
-                     </div>
-                     <div class="bed_room">
-                        <h2>{{$room->room_title}}</h2>
-                        <p style="padding:12px">{{$room->description}}</p>
-                        <h4 style="padding:12px">Free wifi : {{$room->wifi}}</h4>
-                        <h4 style="padding:12px">Room type : {{$room->room_type}}</h4>
-                        <h4 style="padding:12px">Price : {{$room->price}}</h4>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                    <h1 style="font-size: 25px!important; padding: 10px; text-align: center;">
-                        Book Room
-                    </h1>
-                    @if(session()->has('message'))
-                        <div class="alert alert-success" style="text-align: center;">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            {{ session()->get('message') }}
-                        </div>
-                    @endif
-                    @if($errors->any())
-                        <div class="alert alert-danger" style="text-align: center;">
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    <form action="{{url('add_booking',$room->id)}}" method="post">
+
+               <!-- Right Column: Booking Sidebar -->
+               <div class="col-lg-4 mt-5 mt-lg-0">
+                  <div class="booking-sidebar">
+                     <h3>Reserve Your Stay</h3>
+                     
+                     @if(session()->has('message'))
+                         <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm transition-smooth" role="alert">
+                             {{ session()->get('message') }}
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+                         </div>
+                     @endif
+                     
+                     @if($errors->any())
+                         <div class="alert alert-danger border-0 shadow-sm small">
+                             <ul class="mb-0">
+                                 @foreach($errors->all() as $error)
+                                     <li>{{ $error }}</li>
+                                 @endforeach
+                             </ul>
+                         </div>
+                     @endif
+
+                     <form action="{{url('add_booking',$room->id)}}" method="post" class="mt-4">
                         @csrf
-                        <div>
-                            <label for="">Name</label>
-                            <input type="text" placeholder="Enter your name" name="name" @if(Auth::id()) value="{{Auth::user()->name}}" @endif>
+                        <div class="mb-1">
+                           <label class="small text-muted mb-0">Full Name</label>
+                           <input type="text" class="luxury-input mt-0" placeholder="Enter name" name="name" @if(Auth::id()) value="{{Auth::user()->name}}" @endif required>
                         </div>
-                        <div>
-                            <label for="">Email</label>
-                            <input type="email" placeholder="Enter your email" name="email" @if(Auth::id()) value="{{Auth::user()->email}}" @endif>
+                        <div class="mb-1">
+                           <label class="small text-muted mb-0">Email Address</label>
+                           <input type="email" class="luxury-input mt-0" placeholder="Enter email" name="email" @if(Auth::id()) value="{{Auth::user()->email}}" @endif required>
                         </div>
-                        <div>
-                            <label for="">Phone</label> 
-                            <input type="number" placeholder="Enter your phone" name="phone" @if(Auth::id()) value="{{Auth::user()->phone}}" @endif>
+                        <div class="mb-1">
+                           <label class="small text-muted mb-0">Phone Number</label> 
+                           <input type="number" class="luxury-input mt-0" placeholder="Enter phone" name="phone" @if(Auth::id()) value="{{Auth::user()->phone}}" @endif required>
                         </div>
-                        <div>
-                            <label for="">Start Date</label>
-                            <input type="date" name="start_date" id="start_date">
+                        <div class="row">
+                           <div class="col-6">
+                              <label class="small text-muted mb-0">Check-in</label>
+                              <input type="date" class="luxury-input mt-0" name="start_date" id="start_date" required>
+                           </div>
+                           <div class="col-6">
+                              <label class="small text-muted mb-0">Check-out</label>
+                              <input type="date" class="luxury-input mt-0" name="end_date" id="end_date" required>
+                           </div>
                         </div>
-                        <div>
-                            <label for="">End Date</label>
-                            <input type="date" name="end_date" id="end_date">
-                        </div>
-                        <div>
-                            <input style="margin-top: 20px;" type="submit" style="background-color: skyblue;" value="Book Room" class="btn btn-primary">
-                        </div>
-                    </form>
+                        <button type="submit" class="btn-luxury w-100 mt-4 p-3 shadow-sm">Confirm Booking</button>
+                        <p class="text-center small text-muted mt-3 mb-0">No payment required now.</p>
+                     </form>
+                  </div>
                </div>
             </div>
          </div>
