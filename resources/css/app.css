@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-sans antialiased;
+    }
+}
+
+@layer components {
+    .glass-card {
+        @apply bg-white/40 backdrop-blur-xl border border-white/20 shadow-soft-xl rounded-3xl;
+    }
+    
+    .glass-sidebar {
+        @apply bg-white/30 backdrop-blur-2xl border-r border-white/10 shadow-2xl;
+    }
+
+    .admin-gradient-bg {
+        background: linear-gradient(135deg, #e0f2fe 0%, #f3e8ff 50%, #ecfdf5 100%);
+        min-height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .active-nav-link {
+        @apply bg-gradient-to-r from-admin-primary/20 to-admin-secondary/20 text-admin-primary border-l-4 border-admin-primary;
+    }
+}
+
+[x-cloak] {
+    display: none;
+}

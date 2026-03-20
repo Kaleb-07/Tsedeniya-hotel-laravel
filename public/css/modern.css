@@ -1,0 +1,202 @@
+/* Modern Luxury Design System for Hotel Project */
+
+:root {
+    --primary: #c8a97e; /* Gold Accent */
+    --primary-dark: #b5956a;
+    --secondary: #1a1a1a; /* Deep Charcoal */
+    --text-muted: #6c757d; /* Muted Gray */
+    --bg-neutral: #f8f9fa; /* Soft Neutral */
+    --white: #ffffff;
+    
+    --shadow-luxury: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 15px 45px rgba(0, 0, 0, 0.1);
+    
+    --radius-lg: 20px;
+    --radius-md: 16px;
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background-color: var(--bg-neutral);
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+/* Typography Headings */
+h1, h2, .playfair {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.section-heading {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--secondary);
+}
+
+.text-gold {
+    color: var(--primary);
+}
+
+/* Layout Helpers */
+.gap-32 {
+    gap: 32px;
+}
+
+/* Room Card Grid & Design */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .room-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .room-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+    }
+}
+
+.luxury-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-luxury);
+    transition: var(--transition-smooth);
+    border: none;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.luxury-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.luxury-card .card-image-wrap {
+    overflow: hidden;
+    position: relative;
+    height: 240px;
+}
+
+.luxury-card .card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.luxury-card:hover .card-image-wrap img {
+    transform: scale(1.1);
+}
+
+.luxury-card .card-content {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.luxury-card .room-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--secondary);
+}
+
+.luxury-card .room-meta {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.luxury-card .room-meta i {
+    margin-right: 4px;
+    color: var(--primary);
+}
+
+.luxury-card .price-tag {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.luxury-card .price-tag span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+/* Luxury Button */
+.btn-luxury {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary) !important;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-luxury:hover {
+    background: var(--primary);
+    color: var(--white) !important;
+    box-shadow: 0 4px 15px rgba(200, 169, 126, 0.4);
+}
+
+/* Header Section Style */
+.room-header-wrap {
+    margin-bottom: 60px;
+}
+
+.view-all-link {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.view-all-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--secondary);
+    transition: var(--transition-smooth);
+}
+
+.view-all-link:hover::after {
+    width: 100%;
+}
+
+/* Arched Visual Section */
+.arched-image-wrap {
+    border-radius: 120px 120px 0 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-luxury);
+}
+
+.arched-image-wrap img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
