@@ -26,7 +26,7 @@
                      <h3 class="footer-heading">Contact Us</h3>
                      <p class="footer-info mb-3"><i class="fa fa-map-marker text-gold mr-2"></i> 123 Luxury Avenue, Paradise City, PC 45678</p>
                      <p class="footer-info mb-3"><i class="fa fa-phone text-gold mr-2"></i> +1 (234) 567-8900</p>
-                     <p class="footer-info mb-3"><i class="fa fa-envelope text-gold mr-2"></i> contact@luxuryhotel.com</p>
+                     <p class="footer-info mb-3"><i class="fa fa-envelope text-gold mr-2"></i> contact@tsedeniyahotel.com</p>
                   </div>
                   <div class="col-lg-3 col-md-6">
                      <h3 class="footer-heading">Newsletter</h3>
@@ -43,7 +43,7 @@
          </div>
          <div class="copyright-bar text-center">
             <div class="container">
-               <p class="mb-0">&copy; {{ date('Y') }} Luxury Hotel. All Rights Reserved. Crafted for Excellence.</p>
+               <p class="mb-0">&copy; {{ date('Y') }} Tsedeniya Hotel. All Rights Reserved. Crafted for Excellence.</p>
             </div>
          </div>
       </footer>

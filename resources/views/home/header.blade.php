@@ -1,51 +1,78 @@
-         <!-- header inner -->
-         <div class="header glass-nav sticky-top">
-            <div class="container">
-                <div class="row align-items-center">
-                   <div class="col-xl-3 col-lg-2">
-                      <div class="logo">
-                         <a href="{{url('/')}}"><img src="images/logo.png" alt="Hotel Logo" style="max-height: 50px;" /></a>
+         <!-- Top Bar (Tailwind) -->
+         <div class="hidden lg:block bg-navy text-white text-[13px] font-light py-2 border-b border-white/5">
+            <div class="container mx-auto px-4">
+               <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-6">
+                     <span class="flex items-center gap-2">
+                        <i class="fa fa-phone text-gold text-xs"></i> 
+                        +(053)-987-3657
+                     </span>
+                     <span class="flex items-center gap-2">
+                        <i class="fa fa-envelope text-gold text-xs"></i> 
+                        tsedeniyahotel@gmail.com
+                     </span>
+                     <span class="flex items-center gap-2">
+                        <i class="fa fa-map-marker text-gold text-xs"></i> 
+                        25/2 Vokte Street Building Melborn City
+                     </span>
+                  </div>
+                  <div class="flex items-center">
+                     <span class="flex items-center gap-1 cursor-pointer hover:text-gold transition-colors">
+                        <i class="fa fa-globe text-gold"></i> English 
+                        <i class="fa fa-chevron-down text-[10px] ml-1"></i>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Main Navbar (Tailwind) -->
+         <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100 py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                   <!-- Logo -->
+                   <a class="flex items-center group no-underline" href="{{url('/')}}">
+                      <div class="bg-gray-50 p-2 rounded-lg group-hover:bg-gold/10 transition-colors mr-3">
+                         <i class="fa fa-building text-gold text-3xl"></i>
                       </div>
+                      <div class="flex flex-col leading-tight">
+                         <span class="text-2xl font-bold font-serif text-navy tracking-tight">Tsedeniya</span>
+                         <span class="text-[9px] font-bold text-gray-400 tracking-[0.2em] uppercase">Hotel & Resort</span>
+                      </div>
+                   </a>
+
+                   <!-- Nav Links -->
+                   <div class="hidden lg:flex items-center space-x-8 font-medium text-navy text-sm tracking-wide">
+                      <a class="hover:text-gold transition-colors {{ Request::is('/') ? 'text-gold' : '' }}" href="{{url('/')}}">HOME</a>
+                      <a class="hover:text-gold transition-colors" href="{{url('/#about')}}">ABOUT</a>
+                      <a class="hover:text-gold transition-colors {{ Request::is('our_rooms*') ? 'text-gold' : '' }}" href="{{route('our_rooms')}}">ROOMS</a>
+                      <a class="hover:text-gold transition-colors" href="#">PAGES</a>
+                      <a class="hover:text-gold transition-colors {{ Request::is('gallary*') ? 'text-gold' : '' }}" href="{{route('gallary')}}">BLOG</a>
+                      <a class="hover:text-gold transition-colors {{ Request::is('contact*') ? 'text-gold' : '' }}" href="{{route('contact')}}">CONTACT</a>
                    </div>
-                   <div class="col-xl-9 col-lg-10">
-                      <nav class="navigation navbar navbar-expand-lg navbar-light p-0">
-                         <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="fa fa-bars text-dark"></span>
-                         </button>
-                         <div class="collapse navbar-collapse" id="navbarsExample04">
-                            <ul class="navbar-nav mx-auto">
-                               <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
-                                  <a class="nav-link" href="{{url('/')}}">Home</a>
-                               </li>
-                               <li class="nav-item {{ Request::is('about*') ? 'active' : '' }}">
-                                  <a class="nav-link" href="{{url('about')}}">About</a>
-                               </li>
-                               <li class="nav-item {{ Request::is('our_rooms*') ? 'active' : '' }}">
-                                  <a class="nav-link" href="{{url('our_rooms')}}">Rooms</a>
-                               </li>
-                               <li class="nav-item {{ Request::is('gallary*') ? 'active' : '' }}">
-                                  <a class="nav-link" href="{{route('gallary')}}">Gallery</a>
-                               </li>
-                               <li class="nav-item {{ Request::is('contact*') ? 'active' : '' }}">
-                                  <a class="nav-link" href="{{route('contact')}}">Contact</a>
-                               </li>
-                            </ul>
-                            
-                            <div class="d-flex align-items-center ml-lg-4">
-                               @if (Route::has('login'))
-                                     @auth
-                                           <a class="btn-luxury" style="padding: 8px 20px;" href="{{ url('/home') }}">Dashboard</a>
-                                     @else
-                                           <a class="btn-luxury border-0 text-dark" style="background: transparent; padding: 8px 15px;" href="{{ route('login') }}">Login</a>
-                                           @if (Route::has('register'))
-                                           <a class="btn-luxury ml-2" style="padding: 8px 20px;" href="{{ route('register') }}">Join Now</a>
-                                           @endif
-                                     @endauth
-                               @endif
-                            </div>
-                         </div>
-                      </nav>
+                      
+                   <!-- Actions -->
+                   <div class="flex items-center space-x-5">
+                      <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-100 text-gray-400 hover:border-gold hover:text-gold transition-all">
+                         <i class="fa fa-search"></i>
+                      </button>
+                      @if (Route::has('login'))
+                            @auth
+                                  <a class="bg-gold hover:bg-gold-dark text-navy font-bold text-xs uppercase px-7 py-3 rounded group relative overflow-hidden transition-all shadow-md active:scale-95" href="{{ url('/home') }}">
+                                     Dashboard
+                                  </a>
+                            @else
+                                  <a class="bg-gold hover:bg-gold-dark text-black font-bold text-xs uppercase px-7 py-3.5 rounded transition-all shadow-lg shadow-gold/20 active:scale-95" href="{{ route('login') }}">
+                                     BOOKING NOW
+                                  </a>
+                            @endauth
+                      @endif
+
+                      <!-- Mobile Menu Button -->
+                      <button class="lg:hidden text-navy border-0 text-2xl" type="button" data-toggle="collapse" data-target="#navbarsExample04">
+                         <span class="fa fa-bars"></span>
+                      </button>
                    </div>
                 </div>
             </div>
-         </div>
+         </nav>

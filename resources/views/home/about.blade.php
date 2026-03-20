@@ -1,4 +1,4 @@
-<div class="about-section">
+<div class="about-section" id="about">
          <div class="container">
             <div class="row align-items-center">
                <div class="col-lg-6 mb-5 mb-lg-0">

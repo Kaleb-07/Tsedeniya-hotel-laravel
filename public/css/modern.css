@@ -1,20 +1,17 @@
 /* Modern Luxury Design System for Hotel Project */
 
 :root {
-    --primary: #c8a97e; /* Gold Accent */
-    --primary-dark: #b5956a;
-    --secondary: #1a1a1a; /* Deep Charcoal */
-    --text-muted: #6c757d; /* Muted Gray */
-    --bg-neutral: #f8f9fa; /* Soft Neutral */
+    /* Exact Palette from Image */
+    --navy: #0e1b2b;
+    --gold: #f1b038;
+    --gold-dark: #d99a2e;
     --white: #ffffff;
+    --light-border: #f0f0f0;
     
-    --shadow-luxury: 0 10px 30px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 15px 45px rgba(0, 0, 0, 0.1);
-    
-    --radius-lg: 20px;
-    --radius-md: 16px;
-    
-    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* System Tokens */
+    --transition-smooth: all 0.3s ease;
+    --shadow-luxury: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --radius-md: 8px;
 }
 
 body {
@@ -159,42 +156,266 @@ h1, h2, .playfair {
     box-shadow: 0 4px 15px rgba(200, 169, 126, 0.4);
 }
 
-/* Navigation Enhancements */
-.header.glass-nav {
-    padding: 15px 0;
-    z-index: 1000;
+/* Header & Navigation Fixes */
+.header {
+    height: auto !important; /* Override legacy responsive.css */
+    padding: 0 !important;
 }
 
-.navbar-nav .nav-link {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--secondary) !important;
-    margin: 0 15px;
-    padding: 5px 0 !important;
-    text-transform: capitalize;
-    letter-spacing: 0.5px;
-    position: relative;
-    border-bottom: none !important;
-}
-
-.navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1.5px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary);
-    transition: var(--transition-smooth);
-}
-
-.navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-item.active .nav-link::after {
+.top-bar {
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 0.8rem;
+    font-weight: 300;
     width: 100%;
 }
 
+.top-bar i {
+    color: var(--gold);
+    margin-right: 8px;
+}
+
+.top-bar .separator {
+    margin: 0 15px;
+    opacity: 0.3;
+}
+
+.navbar-light {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--navy) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--navy) !important;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: var(--transition-smooth);
+}
+
 .navbar-nav .nav-item.active .nav-link {
-    color: var(--primary) !important;
+    color: var(--gold) !important;
+}
+
+.text-gold {
+    color: var(--gold) !important;
+}
+
+.btn-booking {
+    background: var(--gold);
+    color: var(--white) !important;
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.btn-booking:hover {
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 160, 23, 0.4);
+}
+
+/* Hero Section Overhaul */
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 600px;
+    background: var(--navy);
+    overflow: visible; /* Allow floating card to overflow */
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(14, 27, 43, 0.7), rgba(14, 27, 43, 0.8));
+    z-index: 2;
+}
+
+.hero-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: clamp(3rem, 10vw, 6rem);
+    margin-bottom: 20px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.breadcrumb-luxury {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    display: block;
+}
+
+/* Floating Booking Card */
+.floating-booking {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1100px;
+    z-index: 10;
+}
+
+/* Booking Form Overhaul to match image */
+.booking-card-horizontal {
+    background: var(--white);
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.booking-form-wrap {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 200px;
+    align-items: stretch;
+}
+
+.form-group-wrap {
+    padding: 20px 25px;
+    border-right: 1px solid #efefef;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group-wrap label {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0;
+}
+
+.form-group-wrap .form-select-custom {
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #444;
+    appearance: none;
+    width: 100%;
+}
+
+.form-group-wrap i.caret-down {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 0.7rem;
+    pointer-events: none;
+}
+
+.btn-check-wrap {
+    background: var(--gold);
+    border: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.btn-check-wrap:hover {
+    background: var(--gold-dark);
+}
+
+/* Navbar Search Icon */
+.search-icon-circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    transition: var(--transition-smooth);
+}
+
+.search-icon-circle:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.top-bar-item {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.top-bar-item:last-child {
+    border-right: none;
+}
+
+/* Mobile Responsiveness for Booking Form Grid */
+@media (max-width: 991px) {
+    .booking-form-wrap {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group-wrap {
+        border-right: none;
+        border-bottom: 1px solid #efefef;
+    }
+    
+    .btn-check-wrap {
+        padding: 20px;
+    }
+}
+
+.form-group-luxury-btn {
+    flex: 0 0 auto;
+}
+
+@media (max-width: 991px) {
+    .form-group-luxury-btn {
+        width: 100%;
+    }
+    .btn-check-availability {
+        width: 100%;
+    }
 }
 
 /* Footer Enhancements */
