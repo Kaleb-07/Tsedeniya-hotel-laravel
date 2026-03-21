@@ -12,7 +12,7 @@
     </div>
 </footer>
 
-<!-- JavaScript files-->
+<!-- JavaScript Files-->
 <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('admin/vendor/popper.js/umd/popper.min.js') }}"> </script>
 <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
