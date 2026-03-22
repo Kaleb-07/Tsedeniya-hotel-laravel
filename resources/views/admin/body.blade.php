@@ -11,7 +11,7 @@
 
     <!-- Statistics Grid -->
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- New Clients -->
+        <!-- New Clients or -->
         <div class="glass-card p-6 flex flex-col gap-4 group hover:scale-[1.02] transition-transform duration-300">
             <div class="flex items-center justify-between">
                 <div class="w-12 h-12 rounded-2xl bg-sky-500/10 flex items-center justify-center text-sky-600 group-hover:bg-sky-500 group-hover:text-white transition-colors">
