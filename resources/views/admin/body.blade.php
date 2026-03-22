@@ -1,7 +1,7 @@
 @extends('admin.index')
 @section('content')
 <div class="flex flex-col gap-8">
-    <!-- Breadcrumb / Header -->
+    <!--  / Header -->
     <div class="flex items-center justify-between">
         <h2 class="text-2xl font-bold text-zinc-800 font-outfit uppercase tracking-tight">Dashboard Overview</h2>
         <div class="text-xs text-zinc-500 font-medium">
