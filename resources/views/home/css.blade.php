@@ -10,9 +10,9 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
-      <!-- bootstrap css -->
+      <!-- bootstrap Css -->
       <link rel="stylesheet" href="css/bootstrap.min.css">
-       <!-- style css -->
+       <!-- style Css -->
        <link rel="stylesheet" href="css/style.css">
        <!-- Modern CSS -->
        <link rel="stylesheet" href="css/modern.css">
