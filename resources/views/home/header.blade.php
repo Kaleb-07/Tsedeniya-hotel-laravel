@@ -1,4 +1,4 @@
-         <!-- Top Bar (Tailwind) -->
+         <!-- Top Bar -->
          <div class="hidden lg:block bg-navy text-white text-[13px] font-light py-2 border-b border-white/5">
             <div class="container mx-auto px-4">
                <div class="flex justify-between items-center">
@@ -26,7 +26,7 @@
             </div>
          </div>
 
-         <!-- Main Navbar (Tailwind) -->
+         <!-- Main Navbar  -->
          <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100 py-4">
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center">
@@ -75,4 +75,4 @@
                    </div>
                 </div>
             </div>
-         </nav>
+         </nav>
