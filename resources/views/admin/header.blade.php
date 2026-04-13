@@ -26,7 +26,7 @@
             </button>
         </div>
 
-        <!-- User Profile -->
+        <!-- User_Profile -->
         <div class="flex items-center gap-3 pl-4 border-l border-white/20">
             <div class="hidden sm:block text-right">
                 <p class="text-xs font-semibold text-zinc-800">{{ Auth::user()->name ?? 'Mark Stephen' }}</p>
