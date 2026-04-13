@@ -12,7 +12,7 @@
         </div>
     </div>
     
-    <!-- Sidebar Navigation Menus-->
+    <!-- Sidebar_Navigation_Menus-->
     <div class="p-4 flex flex-col gap-2">
         <span class="px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-400">Main Menu</span>
         
