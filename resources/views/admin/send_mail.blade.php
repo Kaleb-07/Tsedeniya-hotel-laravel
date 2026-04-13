@@ -49,7 +49,7 @@
                            class="w-full p-4 bg-white/10 border border-white/20 rounded-2xl focus:ring-2 focus:ring-admin-primary/20 focus:border-admin-primary outline-none transition-all text-zinc-700">
                 </div>
 
-                <!-- End Line -->
+                <!-- End_Line -->
                 <div class="flex flex-col gap-2">
                     <label class="text-xs font-bold text-zinc-800 uppercase tracking-widest font-outfit">Signature / End Line</label>
                     <input type="text" name="endline" id="endline" placeholder="e.g. Regards, Hotel Management" 
