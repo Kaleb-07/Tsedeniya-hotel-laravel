@@ -45,7 +45,7 @@
             </form>
         </div>
 
-        <!-- Mobile Menu Toggle -->
+        <!-- Mobile_Menu_Toggle -->
         <button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl text-zinc-500 hover:bg-white/50 transition-colors ml-2">
             <i class="fa fa-bars text-lg"></i>
         </button>
