@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <!-- Table Container -->
+    <!-- Table_Container -->
     <div class="glass-card overflow-hidden">
         <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse">
