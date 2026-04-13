@@ -1,7 +1,7 @@
     <div class="d-flex align-items-stretch">
       <!-- Sidebar_Navigation-->
       <nav id="sidebar" class="glass-sidebar fixed left-4 top-24 bottom-4 w-64 rounded-3xl overflow-y-auto transition-all duration-300 z-50 hidden lg:block">
-    <!-- Sidebar Header-->
+    <!-- Sidebar_Header-->
     <div class="p-6 flex items-center gap-4 border-b border-white/10">
         <div class="w-12 h-12 rounded-2xl overflow-hidden ring-2 ring-admin-primary/20">
             <img src="{{ asset('admin/img/avatar-6.jpg') }}" alt="..." class="w-full h-full object-cover">
