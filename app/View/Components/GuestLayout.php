@@ -8,7 +8,7 @@ use Illuminate\View\View;
 class GuestLayout extends Component
 {
     /**
-     * Get the view
+     * Get the view and contents that represents the component.
      */
     public function render(): View
     {
