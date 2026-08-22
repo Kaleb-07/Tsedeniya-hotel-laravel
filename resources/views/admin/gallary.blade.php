@@ -38,7 +38,7 @@
                 <img src="{{asset('gallary/'.$item->image)}}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
             </div>
             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <a onclick="return confirm('Are you sure you want to delete this image?');" href="{{url('delete_gallary/'.$item->id)}}" class="w-12 h-12 flex items-center justify-center bg-red-500 text-white rounded-2xl shadow-xl hover:scale-110 transition-transform">
+                <a onclick="return confirm('Are you sure you want to delete this images?');" href="{{url('delete_gallary/'.$item->id)}}" class="w-12 h-12 flex items-center justify-center bg-red-500 text-white rounded-2xl shadow-xl hover:scale-110 transition-transform">
                     <i class="fa fa-trash text-lg"></i>
                 </a>
             </div>
