@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="glass-card p-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
-                &copy; {{ date('Y') }} <span class="text-admin-primary">Hotel Premium</span> Admin Dashboard.
+                &copy; {{ date('Y') }} <span class="text-admin-primary">Hotel Premium</span> Admin Dashboards.
             </p>
             <div class="flex items-center gap-6">
                 <a href="#" class="text-[10px] font-bold text-zinc-500 uppercase hover:text-admin-primary transition-colors">Documentation</a>
