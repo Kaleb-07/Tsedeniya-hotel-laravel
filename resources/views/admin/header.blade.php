@@ -13,7 +13,7 @@
     </div>
 
     <div class="flex items-center gap-4">
-        <!-- Search -->
+        <!-- Search option -->
         <button class="w-10 h-10 flex items-center justify-center rounded-xl text-zinc-500 hover:bg-white/50 transition-colors">
             <i class="fa fa-search"></i>
         </button>
