@@ -30,7 +30,7 @@
         </form>
     </div>
 
-    <!-- Gallery Grid -->
+    <!-- Gallery Grids -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         @foreach ($gallary as $item)
         <div class="glass-card p-3 group relative overflow-hidden">
