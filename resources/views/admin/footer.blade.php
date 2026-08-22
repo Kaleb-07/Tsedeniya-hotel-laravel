@@ -6,7 +6,7 @@
             </p>
             <div class="flex items-center gap-6">
                 <a href="#" class="text-[10px] font-bold text-zinc-500 uppercase hover:text-admin-primary transition-colors">Documentation</a>
-                <a href="#" class="text-[10px] font-bold text-zinc-500 uppercase hover:text-admin-primary transition-colors">Support</a>
+                <a href="#" class="text-[10px] font-bold text-zinc-500 uppercase hover:text-admin-primary transition-colors">Supports</a>
             </div>
         </div>
     </div>
