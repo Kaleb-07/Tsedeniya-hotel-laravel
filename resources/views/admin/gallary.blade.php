@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <!-- Upload Form -->
+    <!-- Upload Gallary Form -->
     <div class="glass-card p-8">
         <form action="{{url('upload_gallary')}}" method="post" enctype="multipart/form-data" class="flex flex-col md:flex-row items-end gap-6">
             @csrf
